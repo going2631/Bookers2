@@ -8,7 +8,7 @@
     <label for="user_Name">Name</label>
     <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"Name"%>
   </div>
-  
+
   <div class="form-group">
     <%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg"%>
     <label for="user_Image">Image</label>
