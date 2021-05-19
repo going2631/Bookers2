@@ -1,5 +1,15 @@
 <main>
+  <%if @user.errors.any?%>
+      <tbody>
+        <tr>
+          <td><%= "errors :#{@user.errors.count}"%></td>
+          <% @user.errors.full_messages.each do |message| %>
+            <td><%= message %></td>
+          <% end %>
+        </tr>
   <div class="container">
+      </tbody>
+    <% end %>
     <div class="row">
       <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
         <h1>User info</h1>
