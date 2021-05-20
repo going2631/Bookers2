@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+  before_action :correct_post,only: [:edit]
+
   def index
     @users = User.all
     @user =  current_user
@@ -26,6 +29,15 @@ class UsersController < ApplicationController
       render "edit"
     end
   end
+
+
+  def correct_post
+        @user = User.find(params[:id])
+    unless @user.id == current_user.id
+      redirect_to user_path(current_user.id)
+    end
+  end
+
 
     private
 

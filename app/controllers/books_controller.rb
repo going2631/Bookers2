@@ -1,4 +1,8 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!
+  before_action :correct_post,only: [:edit]
+
+
   def index
     @books = Book.all
     @user = current_user
@@ -43,6 +47,14 @@ class BooksController < ApplicationController
     @book.destroy
     redirect_to  books_path
   end
+
+  def correct_post
+        @book = Book.find(params[:id])
+    unless @book.user_id == current_user.id
+      redirect_to books_path
+    end
+  end
+
 
   protected
 
