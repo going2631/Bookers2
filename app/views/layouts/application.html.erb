@@ -50,7 +50,7 @@
                 </li>
                 <li class = "nav-item">
                   <%= link_to destroy_user_session_path, method: :delete  do%>
-                  <i class="fas fa-sign-out-alt"></i>Log out
+                  <i class="fas fa-sign-out-alt"></i>Logout
                   <% end %>
                 </li>
               <% else %>
@@ -66,12 +66,12 @@
                 </li>
                 <li class = "nav-item">
                   <%= link_to new_user_registration_path do%>
-                    <i class="fas fa-user-plus"></i>Sign up
+                    <i class="fas fa-user-plus"></i>sign up
                   <% end %>
                 </li>
                 <li class = "nav-item">
                   <%= link_to  new_user_session_path do%>
-                    <i class="fas fa-sign-in-alt"></i>log in
+                    <i class="fas fa-sign-in-alt"></i>login
                   <% end %>
                 </li>
               <% end %>
